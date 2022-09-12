@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   bool roundUp = false;
   double tipAmount = 0;
   int tipAmountInt = 0;
+  String tipAmountStr = "";
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                     textAlign: TextAlign.center,
                   )
                 : Text(
-                    "Tip amount: \$$tipAmount",
+                    "Tip amount: \$$tipAmountStr",
                     textAlign: TextAlign.center,
                   ),
           ),
@@ -130,6 +131,8 @@ class _HomePageState extends State<HomePage> {
     }
     if (roundUp == true) {
       tipAmountInt = tipAmount.ceil();
+    } else {
+      tipAmountStr = tipAmount.toStringAsFixed(2);
     }
     setState(() {});
   }
