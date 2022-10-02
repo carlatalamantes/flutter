@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bloc/favorite_bloc.dart';
 
 class FavoritesDetail extends StatefulWidget {
@@ -71,6 +72,7 @@ class _FavoritesDetailState extends State<FavoritesDetail> {
                 padding: const EdgeInsets.all(8.0),
                 alignment: Alignment.center,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Image.network(
                       widget.data["image"]!,
@@ -84,9 +86,78 @@ class _FavoritesDetailState extends State<FavoritesDetail> {
                           fontSize: 20),
                     ),
                     Text(
+                      widget.data["album"]!,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
                       widget.data["artist"]!,
                       style: TextStyle(color: Colors.white),
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Material(
+                          child: Center(
+                            child: Ink(
+                              decoration: const ShapeDecoration(
+                                color: Colors.white,
+                                shape: CircleBorder(),
+                              ),
+                              child: IconButton(
+                                tooltip: 'Ver Spotify',
+                                onPressed: () async {
+                                  final Uri _links =
+                                      Uri.parse(widget.data["linkSpotify"]!);
+                                  await launchUrl(_links);
+                                },
+                                icon: FaIcon(FontAwesomeIcons.spotify),
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          child: Center(
+                            child: Ink(
+                              decoration: const ShapeDecoration(
+                                color: Colors.white,
+                                shape: CircleBorder(),
+                              ),
+                              child: IconButton(
+                                tooltip: 'Ver Spotify',
+                                onPressed: () async {
+                                  final Uri _links =
+                                      Uri.parse(widget.data["linkApple"]!);
+                                  await launchUrl(_links);
+                                },
+                                icon: FaIcon(FontAwesomeIcons.apple),
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          child: Center(
+                            child: Ink(
+                              decoration: const ShapeDecoration(
+                                color: Colors.white,
+                                shape: CircleBorder(),
+                              ),
+                              child: IconButton(
+                                tooltip: 'Ver Spotify',
+                                onPressed: () async {
+                                  final Uri _links =
+                                      Uri.parse(widget.data["linkAll"]!);
+                                  await launchUrl(_links);
+                                },
+                                icon: FaIcon(FontAwesomeIcons.podcast),
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
 
                   // children: [Image(image: widget.data['image']), Text('DATA')],
