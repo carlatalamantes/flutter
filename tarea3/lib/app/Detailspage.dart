@@ -39,8 +39,11 @@ class _DetailspageState extends State<Detailspage> {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Image(
-                    image: NetworkImage(
-                        "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/yellow-business-leadership-book-cover-design-template-dce2f5568638ad4643ccb9e725e5d6ff.jpg?ts=1637017516")),
+                  image: NetworkImage(
+                      "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png"),
+                  fit: BoxFit.cover,
+                  height: 300,
+                ),
               ),
 
               Padding(
@@ -64,7 +67,7 @@ class _DetailspageState extends State<Detailspage> {
               GestureDetector(
                 child: Text(
                     widget.book['volumeInfo']['description'] == null
-                        ? 'Descripción no disponible'
+                        ? '-'
                         : fullDescription == true
                             ? widget.book['volumeInfo']['description']
                                     .toString()
@@ -74,7 +77,8 @@ class _DetailspageState extends State<Detailspage> {
                                     .toString()
                                     .substring(0, 10) +
                                 '...',
-                    style: TextStyle(fontSize: 15)),
+                    style:
+                        TextStyle(fontSize: 15, fontStyle: FontStyle.italic)),
                 onTap: () {
                   this.fullDescription = !this.fullDescription;
                   print(this.fullDescription);

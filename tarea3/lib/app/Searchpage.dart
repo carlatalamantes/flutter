@@ -83,7 +83,7 @@ class Searchpage extends StatelessWidget {
                                 decoration: new BoxDecoration(
                                   image: new DecorationImage(
                                     image: NetworkImage(
-                                        "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/yellow-business-leadership-book-cover-design-template-dce2f5568638ad4643ccb9e725e5d6ff.jpg?ts=1637017516"),
+                                        "https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png"),
                                     fit: BoxFit.fitWidth,
                                   ),
                                 ),
