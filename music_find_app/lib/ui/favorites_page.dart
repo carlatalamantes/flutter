@@ -6,38 +6,6 @@ import 'package:music_find_app/ui/favorites_component.dart';
 
 class Favoritespage extends StatefulWidget {
   Favoritespage({Key? key, required this.title}) : super(key: key);
-  final List<Map<String, String>> _listElements = [
-    {
-      "title": "Song title",
-      "artist": "Artist name",
-      "album": "Album title",
-      "year": "Year",
-      "image": "https://i.imgur.com/tpHc9cS.jpg",
-      "linkSpotify": "",
-      "linkApple": "",
-      "linkPodcast": ""
-    },
-    {
-      "title": "Song title",
-      "artist": "Artist name",
-      "album": "Album title",
-      "year": "Year",
-      "image": "https://i.imgur.com/tpHc9cS.jpg",
-      "linkSpotify": "",
-      "linkApple": "",
-      "linkPodcast": ""
-    },
-    {
-      "title": "Song title",
-      "artist": "Artist name",
-      "album": "Album title",
-      "year": "Year",
-      "image": "https://i.imgur.com/tpHc9cS.jpg",
-      "linkSpotify": "",
-      "linkApple": "",
-      "linkPodcast": ""
-    },
-  ];
 
   final String title;
 
