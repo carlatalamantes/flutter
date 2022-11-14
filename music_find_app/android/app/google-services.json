@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "170587882627",
+    "project_id": "musicfind-c22d2",
+    "storage_bucket": "musicfind-c22d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170587882627:android:672bd7367c8ef53312c7b6",
+        "android_client_info": {
+          "package_name": "com.example.music_find_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170587882627-vt704p3ehiru3qpg4i6ijplfpjudsqig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKJE6Uoj_rG7NDwrUdQUcV4EPW77zDmBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170587882627-vt704p3ehiru3qpg4i6ijplfpjudsqig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
