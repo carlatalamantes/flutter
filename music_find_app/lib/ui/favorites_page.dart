@@ -15,19 +15,30 @@ class Favoritespage extends StatefulWidget {
 
 class _FavoritespageState extends State<Favoritespage> {
   @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<FavoriteBloc>(context, listen: false)
+        .getFavorites()
+        .then((value) => {
+              setState(() {
+                print(value);
+              })
+            });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
         ),
         body: BlocConsumer<FavoriteBloc, FavoriteState>(
-          listener: (context, state) {
-            // TODO: implement listener
-          },
+          listener: (context, state) {},
           builder: (context, state) {
             return ListView.builder(
               scrollDirection: Axis.vertical,
-              itemCount: state.favoriteList.length,
+              itemCount:
+                  BlocProvider.of<FavoriteBloc>(context).favoriteList.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () => {
@@ -35,13 +46,16 @@ class _FavoritespageState extends State<Favoritespage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => FavoritesDetail(
-                            title: 'Detail', data: state.favoriteList[index]),
+                            title: 'Detail',
+                            data: BlocProvider.of<FavoriteBloc>(context)
+                                .favoriteList[index]),
                       ),
                     ),
                     //show dialog
                   },
                   child: FavoriteItem(
-                    content: state.favoriteList[index],
+                    content: BlocProvider.of<FavoriteBloc>(context)
+                        .favoriteList[index],
                   ),
                 );
               },

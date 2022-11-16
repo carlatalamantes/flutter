@@ -18,3 +18,7 @@ class FavoriteSuccess extends FavoriteState {
 class FavoriteDelete extends FavoriteState {
   FavoriteDelete({required favoriteList});
 }
+
+class FavoriteRetrieve extends FavoriteState {
+  FavoriteRetrieve({required favoriteList});
+}

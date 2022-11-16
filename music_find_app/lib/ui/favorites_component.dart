@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FavoriteItem extends StatelessWidget {
-  final Map<String, String> content;
+  final Map<dynamic, dynamic> content;
   FavoriteItem({Key? key, required this.content}) : super(key: key);
 
   @override

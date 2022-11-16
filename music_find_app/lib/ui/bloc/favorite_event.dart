@@ -11,3 +11,7 @@ class UpdateFavorite extends FavoriteEvent {
 
   UpdateFavorite(this.data);
 }
+
+class GetFavorites extends FavoriteEvent {
+  GetFavorites();
+}
