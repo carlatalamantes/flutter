@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:music_find_app/ui/bloc/bloc_music_bloc.dart';
 import 'package:music_find_app/ui/favoritesDetail_page.dart';
 import 'package:music_find_app/ui/favorites_page.dart';
+import 'package:music_find_app/ui/login_widget.dart';
+
+import 'bloc/auth_bloc.dart';
 
 class Homepage extends StatefulWidget {
   Homepage({Key? key, required this.title}) : super(key: key);
@@ -19,6 +22,24 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          actions: [
+            BlocConsumer<AuthBloc, AuthState>(
+              listener: (context, state) {
+                if (state is UnAuthenticated) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => LoginWidget(),
+                    ),
+                  );
+                }
+              },
+              builder: (context, state) {
+                return IconButton(
+                    onPressed: () => Logout(context),
+                    icon: Icon(Icons.logout_outlined));
+              },
+            )
+          ],
         ),
         body: Container(
           padding: const EdgeInsets.all(8.0),
@@ -42,6 +63,14 @@ class _HomepageState extends State<Homepage> {
                       "linkAll": state.linkAll
                     },
                   ),
+                ),
+              );
+            }
+            if (state is UnAuthenticated) {
+              print("holaa");
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => LoginWidget(),
                 ),
               );
             }
@@ -115,5 +144,9 @@ class _HomepageState extends State<Homepage> {
                 ]);
           }),
         ));
+  }
+
+  void Logout(context) async {
+    BlocProvider.of<AuthBloc>(context).add(SignOutRequested());
   }
 }

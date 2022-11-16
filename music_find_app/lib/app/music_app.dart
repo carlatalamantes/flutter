@@ -9,6 +9,6 @@ class MusicApp extends StatelessWidget {
         title: 'Music App',
         theme: ThemeData.dark(),
         darkTheme: ThemeData.dark(),
-        home: MusicApp());
+        home: LoginWidget());
   }
 }
