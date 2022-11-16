@@ -9,7 +9,7 @@ class FavoritesDetail extends StatefulWidget {
       : super(key: key);
 
   final String title;
-  final Map<String, String> data;
+  final Map<dynamic, dynamic> data;
 
   @override
   _FavoritesDetailState createState() => _FavoritesDetailState();

@@ -7,7 +7,7 @@ abstract class FavoriteEvent extends Equatable {
 }
 
 class UpdateFavorite extends FavoriteEvent {
-  Map<String, String> data;
+  Map<dynamic, dynamic> data;
 
   UpdateFavorite(this.data);
 }
