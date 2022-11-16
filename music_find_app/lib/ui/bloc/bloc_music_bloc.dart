@@ -44,7 +44,7 @@ class BlocMusicBloc extends Bloc<BlocMusicEvent, BlocMusicState> {
           'Content-Type': 'multipart/form-data',
         },
         body: jsonEncode(<String, dynamic>{
-          'api_token': '115a65141c4cbc980b3adc6456d530d7',
+          'api_token': '091400089ec4d906860570aba372fdc0',
           'return': 'apple_music,spotify',
           'audio': finalFile,
           'method': 'recognize',
